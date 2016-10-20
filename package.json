@@ -1,0 +1,15 @@
+{
+    "name": "vue-sortable",
+    "version": "0.1.0",
+    "description": "Vue sortable directive for customer portal",
+    "devDependencies": {
+        "grunt": "^1.0.1",
+        "grunt-bower-task": "^0.4.0",
+        "grunt-contrib-clean": "^1.0.0",
+        "grunt-contrib-uglify": "^2.0.0",
+        "grunt-contrib-watch": "^1.0.0"
+    },
+    "dependencies": {
+        "time-grunt": "^1.4.0"
+    }
+}
