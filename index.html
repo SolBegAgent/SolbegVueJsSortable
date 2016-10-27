@@ -1,7 +1,6 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="csrf-token" content="sfsd4353w345">
         <title>title</title>
     </head>
     <body> 
@@ -19,7 +18,9 @@
                         sortableOptions: {
                             groupIdAttribute: 'id',
                             itemIdAttribute: 'id',
-                            urlSaveAction: '/index1.php'
+                            urlSaveAction: '/index1.php',
+                            csrfToken:'sfsd4353w345',
+                            minHeigthElement:100,
                         }
                     },
                     methods: {
@@ -54,6 +55,9 @@
                                             {name: 'task' + (this.boards.length * 2) + 2, 'id': (this.boards.length * 2) + 2}],
                                 options: {}
                             });
+                        },
+                        callback:function(data){
+                            console.log(data);
                         }
                     }
                 });
@@ -62,7 +66,7 @@
         <div id="sortable">
             <div v-for="board in boards" >
                 <p>{{board.name}}</p>
-                <ul v-bind:id="board.id" v-sortable="{global:sortableOptions,local:board.options}">
+                <ul v-bind:id="board.id" v-sortable="{global:sortableOptions,local:board.options,callback:callback}">
                     <li v-for="item in board.list"  v-bind:id="item.id"><p>{{item.name}}</p></li>
                 </ul>
             </div>  
