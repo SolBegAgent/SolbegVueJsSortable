@@ -1,13 +1,13 @@
 ;
 (function (Vue, Sortable) {
-    if (!Vue.http) {
-        throw new Error("Error directive usage : lib vue-resource.js is required");
+    if (!axios) {
+        throw new Error("Error directive usage : lib axios.js is required");
     }
     
     var VueSortableHelper = (function (Vue) {
         return {
             sendNewStatePostRequest: function (url, postData, callback) {
-                Vue.http.post(url, postData, {body: 'JSON'}).then(function (response) {
+                axios.post(url, postData, {body: 'JSON'}).then(function (response) {
                     if (callback) {
                         callback(response.data);
                     }
